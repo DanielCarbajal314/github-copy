@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  backend:
+    image: github-clone-nest-js-backend
+    build: 
+      context: github-copy-backend
+    ports: 
+      - "3000:3000"
+  frontend:
+    image: github-clone-angular-frontend
+    build: 
+      context: github-copy-front
+    ports: 
+      - "8080:80"
