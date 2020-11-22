@@ -31,7 +31,6 @@ describe('AppController (e2e)', () => {
         expect(firtsCommit.date).toBe('2020-11-21T23:51:33.000Z');
         expect(firtsCommit.avatarSrc).toBe('https://avatars0.githubusercontent.com/u/20676030?v=4');        
         expect(firtsCommit.message).toBe('Adding angular and its container');
-        console.log(body);
       });
   });
 });
