@@ -1,9 +1,9 @@
-import { ICommand } from '@nestjs/cqrs';
-import { IsEmail, IsNotEmpty } from 'class-validator';
-
-export class CommitHistoryQuery implements ICommand  {
-    @IsNotEmpty()
-    public readonly username:string;
-    @IsNotEmpty()
-    public readonly repository:string;
+export class CommitHistoryQueryResponse {
+    constructor(
+        public readonly id: string,
+        public readonly message: string,
+        public readonly author: string,
+        public readonly avatarSrc: string,
+        public readonly date: Date
+    ) {}
 }
