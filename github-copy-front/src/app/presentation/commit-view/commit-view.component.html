@@ -1,0 +1,36 @@
+<div  fxLayout="column" fxLayoutAlign="space-around center" fxFlex="100" fxLayoutGap="4%" class="main-body">
+    <form [formGroup]="commitHistoryQueryFormGroup" (ngSubmit)="queryRepositoryHistory()" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="4%" fxFlex="100">
+        <mat-form-field fxFlex="30">
+            <mat-label>Github User</mat-label>
+            <input matInput formControlName="username">
+        </mat-form-field>
+        <mat-form-field fxFlex="30">
+            <mat-label>Github User</mat-label>
+            <input matInput formControlName="repository">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" fxFlex="40" [disabled]="loadingState.isLoading">Query Commit History</button>
+    </form>   
+    <div fxLayout="column" fxLayoutAlign="center center" fxFill>
+        <div fxLayout="column" *ngIf="loadingState.isLoading">
+            <mat-spinner></mat-spinner>
+            <h5>{{loadingState.message}}</h5>
+        </div>  
+        <div *ngIf="!loadingState.isLoading" fxLayout="column" fxLayoutGap="3%" fxLayoutAlign="center center" fxFill>
+            <div fxLayout="row" *ngFor="let commit of commitHistory" class="card-container" >
+                <mat-card class="commit-card">
+                    <div fxLayout="row" fxLayoutGap="3%">
+                        <div fxLayout="column"  fxLayoutAlign="center center">
+                            <img [src]="commit.avatarSrc" width="100" height="100">
+                            <h2>{{commit.author}}</h2>
+                        </div>
+                        <div>
+                            <h1>Commit Message : <b>{{commit.message}}</b></h1>
+                            <h2>on {{commit.date | date:'medium'}}</h2>
+                            <h3>{{commit.id}}</h3>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>     
+        </div>
+    </div>  
+</div>

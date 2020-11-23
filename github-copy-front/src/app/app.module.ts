@@ -46,14 +46,23 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from '@angular/flex-layout/typings/module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { CommitViewComponent } from './presentation/commit-view/commit-view.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CoreModule } from './core/core.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CommitViewComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
@@ -101,6 +110,7 @@ import { FlexLayoutModule } from '@angular/flex-layout/typings/module';
     OverlayModule,
     PortalModule,
     ScrollingModule,
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
