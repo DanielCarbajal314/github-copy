@@ -52,11 +52,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from './core/core.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
+import { FormExampleComponent } from './presentation/form-example/form-example.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CommitViewComponent
+    CommitViewComponent,
+    FormExampleComponent
   ],
   imports: [
     BrowserModule,

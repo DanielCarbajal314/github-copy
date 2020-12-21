@@ -1,0 +1,142 @@
+<div  fxLayout="column" fxLayoutAlign="space-around start" fxFlex="100" fxLayoutGap="1%">
+    <h4>Remittance Detail</h4>
+    <div fxLayout="row" fxLayoutGap="2%" class="full-width">
+        <mat-form-field appearance="fill" fxFlex="25">
+            <mat-label>Transaction Date</mat-label>
+            <input matInput [matDatepicker]="picker" [formControl]="remittanceDetail.transactionDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>          
+        <mat-form-field fxFlex="25">
+            <mat-label>Applied Amount</mat-label>
+            <input matInput type="text" [formControl]="remittanceDetail.appliedAmount">
+        </mat-form-field>
+        <mat-form-field fxFlex="25">
+            <mat-label>Balance Due</mat-label>
+            <input matInput type="text" [formControl]="remittanceDetail.balanceDue">
+        </mat-form-field>
+        <mat-form-field fxFlex="25">
+            <mat-label>Fee %</mat-label>
+            <input matInput type="text" [formControl]="remittanceDetail.feePercentage">
+        </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutGap="2%" class="full-width">
+        <div fxFlex="74" fxLayout="column">
+            <div fxLayout="row" fxLayoutGap="4%">
+                <mat-form-field appearance="fill" fxFlex="30">
+                    <mat-label>Recovery Type</mat-label>
+                    <mat-select [formControl]="remittanceDetail.recoveryTypeId">
+                      <mat-option [value]="0">Recovery</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field fxFlex="30">
+                    <mat-label>Coinsurance</mat-label>
+                    <input matInput type="text" [formControl]="remittanceDetail.coinsurance">
+                </mat-form-field>
+                <mat-form-field appearance="fill" fxFlex="30">
+                    <mat-label>Disbursement Type</mat-label>
+                    <mat-select [formControl]="remittanceDetail.disbursementTypeId">
+                        <mat-option [value]="0">Disbursement</mat-option>
+                    </mat-select>
+                </mat-form-field>                                
+            </div>
+            <div fxLayout="row" fxLayoutGap="4%">
+                <mat-form-field appearance="fill" fxFlex="30">
+                    <mat-label>Remit Type</mat-label>
+                    <mat-select [formControl]="remittanceDetail.remitTypeId">
+                        <mat-option [value]="0">Remit</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field fxFlex="30">
+                    <mat-label>Write-Off</mat-label>
+                    <input matInput type="text" [formControl]="remittanceDetail.writeOff">
+                </mat-form-field>
+                <mat-form-field appearance="fill" fxFlex="30">
+                    <mat-label>Disbursement Reason</mat-label>
+                    <mat-select [formControl]="remittanceDetail.disbursementReasonId">
+                        <mat-option [value]="0">Disbursement</mat-option>
+                    </mat-select>
+                </mat-form-field>    
+            </div>
+        </div>
+        <mat-form-field fxFlex="24">
+            <mat-label>Note</mat-label>
+            <textarea matInput [formControl]="remittanceDetail.note"></textarea>
+        </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutGap="2%" class="full-width">
+        <div fxFlex="24" fxLayout="column" fxLayoutGap="2%"> 
+            <button mat-raised-button color="primary">Enter Check Info</button>
+            <button mat-raised-button color="primary">Linked Invoices</button>
+        </div>
+        <div fxFlex="74" fxLayout="column">
+            <div fxLayout="row" fxLayoutGap="4%">
+                <mat-form-field fxFlex="30">
+                    <mat-label>Recovery Amount</mat-label>
+                    <input matInput type="text" [formControl]="remittanceDetail.recoveryAmount">
+                </mat-form-field>
+                <mat-form-field fxFlex="30">
+                    <mat-label>Disbursement</mat-label>
+                    <input matInput type="text" [formControl]="remittanceDetail.disbursement">
+                </mat-form-field>
+                <mat-form-field fxFlex="30">
+                    <mat-label>Payee</mat-label>
+                    <input matInput type="text" [formControl]="remittanceDetail.payee">
+                </mat-form-field>                                               
+            </div>
+        </div>
+    </div>
+    <h3>Claims</h3>
+    <div fxLayout="row">
+
+    </div>
+    <div fxLayout="row" fxLayoutGap="2%" class="full-width">
+        <mat-form-field fxFlex="50">
+            <mat-label>Notes</mat-label>
+            <textarea matInput [formControl]="remittanceDetail.notes"></textarea>
+        </mat-form-field>
+        <div fxFlex="50">
+            <div fxLayout="row" fxLayoutGap="2%">
+                <mat-form-field fxFlex="25">
+                    <mat-label>ARD Initials</mat-label>
+                    <input matInput type="text" [formControl]="remittanceDetail.ardInitials">
+                </mat-form-field>
+                <mat-form-field fxFlex="15">
+                    <mat-label>ARD %</mat-label>
+                    <input matInput type="text" [formControl]="remittanceDetail.ardPercentage">
+                </mat-form-field>
+                <mat-form-field fxFlex="25">
+                    <mat-label>ARD Value</mat-label>
+                    <input matInput type="text" [formControl]="remittanceDetail.ardValue">
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutGap="2%">
+                <mat-form-field fxFlex="25">
+                    <mat-label>Auditor Initials</mat-label>
+                    <input matInput type="text" [formControl]="remittanceDetail.auditorInitials">
+                </mat-form-field>
+                <mat-form-field fxFlex="15">
+                    <mat-label>Auditor %</mat-label>
+                    <input matInput type="text" [formControl]="remittanceDetail.auditorPercentage">
+                </mat-form-field>
+                <mat-form-field fxFlex="25">
+                    <mat-label>Auditor Value</mat-label>
+                    <input matInput type="text" [formControl]="remittanceDetail.auditorValue">
+                </mat-form-field>
+                <mat-form-field fxFlex="25">
+                    <mat-label>Total</mat-label>
+                    <input matInput type="text" [formControl]="remittanceDetail.total">
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutGap="1%" class="full-width">
+        <button mat-raised-button color="primary" fxFlex="10">Process Full Write-Off</button>
+        <button mat-raised-button color="primary" fxFlex="10">Allocate Full Recovery</button>
+        <button mat-raised-button color="primary" fxFlex="10">Submit</button>
+        <button mat-raised-button color="primary" fxFlex="10" fxFlexOffset="8">Save Draft</button>
+        <button mat-raised-button color="primary" fxFlex="10" fxFlexOffset="8">Return to Queue</button>
+        <button mat-raised-button color="primary" fxFlex="10">Return to Invoice</button>
+        <button mat-raised-button color="primary" fxFlex="10">Reject</button>
+    </div>
+</div>
